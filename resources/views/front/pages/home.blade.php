@@ -41,7 +41,6 @@
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-12 text-center">
                         <div class="section-title two">
-                            <span>Services</span>
                             <h1>Our Amazing Services</h1>
                         </div>
                     </div>
@@ -70,7 +69,6 @@
                 <div class="row">
                     <div class="col-xl-12 text-center col-12">
                         <div class="section-title two">
-                            <span>Working Process</span>
                             <h1>How Does It Work</h1>
                         </div>
                     </div>
@@ -122,13 +120,13 @@
         <section class="agency-featured-wrap section-padding pt-0" id="feature">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-6 col-12">
+                    <div class="col-xl-4 col-12">
                         <div class="cross-featured-shots mml-200 pb-5 pb-lg-0" data-aos="fade-right"
                             data-aos-duration="1200">
                             <img src="{{ asset('/') }}assets/front/img/vision.png" alt="">
                         </div>
                     </div>
-                    <div class="col-xl-5 col-12 offset-xl-1">
+                    <div class="col-xl-6 col-12 offset-xl-2">
                         <div class="section-title two">
                             <span>about us</span>
                             <h1>{{ $content->about_title }}</h1>
@@ -139,114 +137,79 @@
                 </div>
             </div>
         </section>
-        <section class="funfact-wrap section-padding pt-0">
+        <section class="funfact-wrap">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-12 text-center">
                         <div class="section-title two">
-                            <span>Statistics</span>
                             <h1>We Completed 1500+ Projects Successfully & Counting</h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy.</p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                         <div class="single-funfact sf1">
                             <span class="counter">1200</span>
                             <p>Global Customer</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                         <div class="single-funfact sf2">
                             <span class="counter">1500</span>
                             <p>Complet Project</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                         <div class="single-funfact sf3">
                             <span class="counter">450</span>
                             <p>Expert Worker</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-                        <div class="single-funfact sf3">
-                            <span class="counter">30</span>
-                            <p>Event Sponsored</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="gallery-area section-padding pt-0">
+        <section class="gallery-area section-padding pt-5">
             <div class="container">
                 <div class="row align-items-center text-center text-lg-left">
-                    <div class="col-lg-5 col-md-6 col-sm-12">
-                        <div class="section-title two">
-                            <span>gallery</span>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="section-title two text-center">
                             <h1>Check Some of Our Recent Work</h1>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 offset-lg-1 col-md-6 col-sm-12 col-xs-12">
-                        <div class="gallery-menu">
-                            <button data-filter="*">View Gallery</button>
-                            <button data-filter=".ui">Ux/ui design</button>
-                            <button data-filter=".brand">Brand Design</button>
-                            <button data-filter=".web">Web Design</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container-fluid">
                 <div class="row grid">
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 grid-item brand web">
-                        <div class="portfolio text-center">
-                            <a href="{{ asset('/') }}assets/front/img/gallery/1.jpg" class="gallery-item">
-                                <img class="img-fluid" src="{{ asset('/') }}assets/front/img/gallery/1.jpg"
-                                    alt="">
-                            </a>
+
+                    @foreach ($portfolio as $item)
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 grid-item brand web">
+                            <div class="portfolio text-center">
+                                <a href="{{ asset('/') }}images/{{ $item->image }}" class="gallery-item">
+                                    <img class="img-fluid" src="{{ asset('/') }}images/{{ $item->image }}"
+                                        alt="">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 grid-item web ui">
-                        <div class="portfolio text-center">
-                            <a href="{{ asset('/') }}assets/front/img/gallery/2.jpg" class="gallery-item">
-                                <img class="img-fluid" src="{{ asset('/') }}assets/front/img/gallery/2.jpg"
-                                    alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 grid-item brand web ui">
-                        <div class="portfolio text-center">
-                            <a href="{{ asset('/') }}assets/front/img/gallery/3.jpg" class="gallery-item">
-                                <img class="img-fluid" src="{{ asset('/') }}assets/front/img/gallery/3.jpg"
-                                    alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 grid-item ui">
-                        <div class="portfolio text-center">
-                            <a href="{{ asset('/') }}assets/front/img/gallery/4.jpg" class="gallery-item">
-                                <img class="img-fluid" src="{{ asset('/') }}assets/front/img/gallery/4.jpg"
-                                    alt="">
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
+
+
+
+
                 </div>
             </div>
         </section>
         <section class="blog-page-wrap section-padding">
             <div class="container">
-                <div class="section-title two">
-                    <span>Blogs</span>
+                <div class="section-title two text-center">
                     <h1>Read Our Blogs</h1>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 col-12">
                         <div class="blog-post-list row">
                             @foreach ($blogs as $item)
-                                <div class="blog-item col-lg-6 col-md-12 post" data-aos='fade-up' data-aos-duration='700'
+                                <div class="blog-item col-lg-4 col-md-12 post" data-aos='fade-up' data-aos-duration='700'
                                     data-aos-delay='100'>
                                     <div class="featured-thumb">
                                         <img src="images/{{ $item->image }}" alt="">

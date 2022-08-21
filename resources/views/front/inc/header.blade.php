@@ -63,15 +63,17 @@
                         <ul class="menu-items">
 
                             <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('/blogs') }}">Blogs</a></li>
-                            <li><a href="#service">Services</a></li>
                             <li><a href="#feature">About us</a></li>
+                            <li><a href="#service">Services</a></li>
                             <li><a href="#review">contact us</a></li>
+                            <li><a href="{{ url('/blogs') }}">Blogs</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
-                    <span class="phone-number mr-4">Call Us: {{ $content->phone }}</span>
+                    <span class="phone-number mr-4">{{ $content->phone }}</span>
+                    <br>
+                    <span class="phone-number mr-4">{{ $content->email }}</span>
                     {{-- <a href="#" class="theme-btn sign-btn">Sing in</a> --}}
                 </div>
                 <div class="col-md-12 d-lg-none">

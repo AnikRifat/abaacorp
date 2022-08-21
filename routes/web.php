@@ -25,6 +25,13 @@ Route::get('/blogs', 'PublicController@blogIndex')->name('blogs');
 Route::get('/view_blogs/{blog}', 'PublicController@viewBlogs')->name('Blog Details');
 
 
+Route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
+Route::get('/portfolio.add', 'PortfolioController@create')->name('portfolio.add');
+Route::post('/portfolio.store', 'PortfolioController@store')->name('portfolio.store');
+Route::get('/portfolio.edit/{portfolio}', 'PortfolioController@edit')->name('portfolio.edit');
+Route::put('/portfolio.update/{portfolio}', 'PortfolioController@update')->name('portfolio.update');
+Route::delete('/portfolio.destroy/{portfolio}', 'PortfolioController@destroy')->name('portfolio.destroy');
+
 
 //blogs-route
 Route::prefix('admin/blogs')->middleware('auth')->group(function () {

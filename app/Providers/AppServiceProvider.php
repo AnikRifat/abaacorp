@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Portfolio;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Website;
@@ -27,5 +28,8 @@ class AppServiceProvider extends ServiceProvider
     {
         $content = Website::find('1');
         View::share('content', $content);
+
+        $portfolio = Portfolio::all();
+        View::share('portfolio', $portfolio);
     }
 }
