@@ -119,7 +119,9 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-12 offset-xl-2">
-                        <p>{{ $content->about }}</p>
+                        <p>
+                        <p>{!! $content->about !!}</p>
+                        </p>
                     </div>
                 </div>
             </div>

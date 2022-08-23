@@ -35,7 +35,7 @@
                         <a href="index.html">
                             <img src="{{ asset('/') }}images/{{ $content->logo }}" alt="">
                         </a>
-                        <p>{{ $content->massage }}</p>
+                        <p>{!! $content->massage !!}</p>
 
                     </div>
                 </div>
