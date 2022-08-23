@@ -1,12 +1,5 @@
 @extends('admin.master.app')
 @section('content')
-    @if ($massage = Session::get('success'))
-        <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fas fa-check"></i> Success!</h5>
-            {{ $massage }}
-        </div>
-    @endif
     <div class="main-body">
         <div class="conatiner">
             <div class="row">
@@ -32,21 +25,41 @@
                                     <label for="name">name</label>
                                     <input id="name" name="name" class="form-control" type="text"
                                         value="{{ $content->name }}">
-
-
                                 </div>
                                 <div class="form-group">
-                                    <label for="slogan">Slogan</label>
-                                    <textarea id="slogan" name="slogan" class="form-control" rows="2" value="">
+                                    <label for="slogan">Slogan </label>
+
+                                    <textarea id="summernote" name="slogan" class="form-control" rows="5" value="">
                                 {{ $content->slogan }}
                                 </textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Slogan Image <span class="text-info">( PNG: 1410 x 820 px )</span></label>
+                                    <img src="{{ asset('/') }}images/{{ $content->slogan_image }}" height="100"
+                                        width="100" alt="">
+
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="slogan_image"
+                                            id="slogan_image">
+                                        <label class="custom-file-label" for="slogan_image">Choose file</label>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="about">About</label>
                                     <textarea id="about" name="about" class="form-control" rows="2">
                                     {{ $content->about }}
                                 </textarea>
+                                    <div class="form-group">
+                                        <label>About Image <span class="text-info">(PNG: 780 x 550 px)</span> </label>
+                                        <img src="{{ asset('/') }}images/{{ $content->about_image }}" height="100"
+                                            width="100" alt="">
 
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="about_image"
+                                                id="about_image">
+                                            <label class="custom-file-label" for="about_image">Choose file</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="massage">Massage</label>
@@ -69,22 +82,38 @@
                                     <textarea id="address" name="address" class="form-control" rows="2">{{ $content->address }}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label>Logo</label>
-                                    <img src="{{ asset('/') }}images/{{ $content->logo }}" height="100" width="100"
-                                        alt="">
+                                    <label>Logo <span class="text-info">(PNG: 220 x 200 px)</span></label>
+                                    <img src="{{ asset('/') }}images/{{ $content->logo }}" height="100"
+                                        width="100" alt="">
+
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" name="logo" id="logo">
                                         <label class="custom-file-label" for="logo">Choose file</label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Logo</label>
+                                    <label>Favicon <span class="text-info">(PNG: 10 x 10 px)</span></label>
                                     <img src="{{ asset('/') }}images/{{ $content->favicon }}" height="100"
                                         width="100" alt="">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" name="favicon" id="favicon">
                                         <label class="custom-file-label" for="favicon">Choose file</label>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="worker">worker</label>
+                                    <input id="worker" name="worker" class="form-control"
+                                        value="{{ $content->worker }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="project">project</label>
+                                    <input id="project" name="project" class="form-control"
+                                        value="{{ $content->project }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="customer">customer</label>
+                                    <input id="customer" name="customer" class="form-control"
+                                        value="{{ $content->customer }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="facebook">Facebook</label>

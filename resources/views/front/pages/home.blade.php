@@ -15,22 +15,13 @@
                     <div class="col-12 col-xl-6 col-lg-6 offset-lg-0 col-sm-10 offset-sm-1">
                         <div class="hero-agency-content">
                             {{-- <span>Digital Agency</span> --}}
-                            <h1 class="fs-lg">{{ $content->slogan }}</h1>
+                            <h1 class="fs-lg">{!! $content->slogan !!}</h1>
                         </div>
                     </div>
                     <div class="col-xl-6 col-12 col-sm-10 offset-sm-1 col-lg-6 mt-5 mt-lg-0 offset-lg-0">
                         <div class="agency-banner">
-                            <div class="animate-element">
-                                <img src="{{ asset('/') }}assets/front/img/icon/video.png" class="e1 shape wow zoomIn"
-                                    data-wow-delay="200ms" alt="">
-                                <img src="{{ asset('/') }}assets/front/img/icon/stock.png" class="e2 shape wow zoomIn"
-                                    data-wow-delay="500ms" alt="">
-                                <img src="{{ asset('/') }}assets/front/img/icon/like.png" class="e3 shape wow zoomIn"
-                                    data-wow-delay="800ms" alt="">
-                                <img src="{{ asset('/') }}assets/front/img/icon/chat.png" class="e4 shape wow zoomIn"
-                                    data-wow-delay="1s" alt="">
-                            </div>
-                            <img src="{{ asset('/') }}assets/front/img/digital-hero.svg" alt="">
+
+                            <img src="{{ asset('/') }}images/{{ $content->slogan_image }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -41,7 +32,7 @@
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-12 text-center">
                         <div class="section-title two">
-                            <h1>Our Amazing Services</h1>
+                            <h1>Our Services</h1>
                         </div>
                     </div>
                 </div>
@@ -115,21 +106,20 @@
             </div>
         </section>
         <section class="agency-featured-wrap section-padding pt-0" id="feature">
+            <div class="section-title two text-center">
+                <h1>About Us</h1>
+            </div>
             <div class="container">
                 <div class="row">
+
                     <div class="col-xl-4 col-12">
                         <div class="cross-featured-shots mml-200 pb-5 pb-lg-0" data-aos="fade-right"
                             data-aos-duration="1200">
-                            <img src="{{ asset('/') }}assets/front/img/vision.png" alt="">
+                            <img src="{{ asset('/') }}images/{{ $content->about_image }}" alt="">
                         </div>
                     </div>
                     <div class="col-xl-6 col-12 offset-xl-2">
-                        <div class="section-title two">
-                            <span>about us</span>
-                            <h1>{{ $content->about_title }}</h1>
-                            <p>{{ $content->about }}</p>
-                        </div>
-
+                        <p>{{ $content->about }}</p>
                     </div>
                 </div>
             </div>
@@ -146,19 +136,19 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                         <div class="single-funfact sf1">
-                            <span class="counter">1200</span>
+                            <span class="counter">{{ $content->customer }}</span>
                             <p>Global Customer</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                         <div class="single-funfact sf2">
-                            <span class="counter">1500</span>
+                            <span class="counter">{{ $content->project }}</span>
                             <p>Complet Project</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                         <div class="single-funfact sf3">
-                            <span class="counter">450</span>
+                            <span class="counter">{{ $content->worker }}</span>
                             <p>Expert Worker</p>
                         </div>
                     </div>
@@ -226,6 +216,10 @@
                         </div>
 
                     </div>
+                </div>
+                <div class="text-center">
+                    <a href="{{ route('blogs') }}" class="btn theme-btn btn-sm ">View All </a>
+
                 </div>
             </div>
         </section>

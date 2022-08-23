@@ -1,13 +1,7 @@
 @extends('admin.master.app')
 @section('content')
     <!-- /.card -->
-    @if ($massage = Session::get('success'))
-        <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fas fa-check"></i> Succwss!</h5>
-            {{ $massage }}
-        </div>
-    @endif
+    
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">View Portfolio</h3><br>

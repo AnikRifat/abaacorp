@@ -77,6 +77,9 @@ class WebsiteController extends Controller
             'phone' => 'required',
             'email' => 'required',
             'address' => 'required',
+            'customer' => 'required',
+            'project' => 'required',
+            'worker' => 'required',
             'facebook' => 'required',
             'twitter' => 'required',
             'linkedin' => 'required',
@@ -84,6 +87,7 @@ class WebsiteController extends Controller
         ]);
 
         $input = $request->all();
+        // dd($input);
         if ($image = $request->file('logo')) {
             $filePath = 'images/';
             $setImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -99,6 +103,22 @@ class WebsiteController extends Controller
             $input['favicon'] = $setImage;
         } else {
             unset($input['favicon']);
+        }
+        if ($image = $request->file('slogan_image')) {
+            $filePath = 'images/';
+            $setImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($filePath, $setImage);
+            $input['slogan_image'] = $setImage;
+        } else {
+            unset($input['slogan_image']);
+        }
+        if ($image = $request->file('about_image')) {
+            $filePath = 'images/';
+            $setImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($filePath, $setImage);
+            $input['about_image'] = $setImage;
+        } else {
+            unset($input['about_image']);
         }
         $content->update($input);
         // dd($content->update($input));

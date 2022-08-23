@@ -27,7 +27,7 @@
                         placeholder="Enter url">
                 </div>
                 <div class="form-group">
-                    <label for="image">Image</label>
+                    <label for="image">Image <span class="text-info">(JPG: 400 x 520 px)</span></label>
                     <img src="{{ asset('/') }}images/{{ $portfolio->image }}" alt="">
                     <div class="input-group">
                         <div class="custom-file">

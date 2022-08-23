@@ -25,7 +25,7 @@
                     <input type="text" class="form-control" name="url" id="url" placeholder="Enter url">
                 </div>
                 <div class="form-group">
-                    <label for="image">Image</label>
+                    <label for="image">Image <span class="text-info">(jpg: 400 x 520 px)</span></label>
                     <div class="input-group">
                         <div class="custom-file">
                             <input type="file" name="image" class="custom-file-input" id="image">

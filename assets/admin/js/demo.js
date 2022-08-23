@@ -9,7 +9,8 @@
 
 (function ($) {
   'use strict'
-
+  $('#summernote').summernote();
+  
 
 
   function capitalizeFirstLetter(string) {
