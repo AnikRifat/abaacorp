@@ -17,8 +17,9 @@
         @endif
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('portfolio.update') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('portfolio.update', $portfolio->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            $@method('put')
             <div class="card-body">
                 <div class="form-group">
                     <label for="url">url</label>
@@ -27,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>
-                    <img src="{{ asset('/') }}images/{{ $item->image }}" alt="">
+                    <img src="{{ asset('/') }}images/{{ $portfolio->image }}" alt="">
                     <div class="input-group">
                         <div class="custom-file">
                             <input type="file" name="image" class="custom-file-input" id="image">

@@ -79,9 +79,8 @@
                             <div class="icon">
                                 <i class="fas fa-comments"></i>
                             </div>
-                            <h4>listen</h4>
-                            <p>When an unknown printer took a
-                                Type and scrambled it to make.</p>
+                            <h4>Free Consultation</h4>
+                            <p>We sit down to fins scope of the project, identify key areas and make suggestions</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-12 text-center">
@@ -90,8 +89,7 @@
                                 <i class="fas fa-clipboard-list"></i>
                             </div>
                             <h4>Plan & Budget</h4>
-                            <p>When an unknown printer took a
-                                Type and scrambled it to make.</p>
+                            <p>Concrete Features planning or System Analysis & Design with timeframe and budget</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-12 text-center">
@@ -99,9 +97,8 @@
                             <div class="icon">
                                 <i class="fas fa-cubes"></i>
                             </div>
-                            <h4>Work and Revision</h4>
-                            <p>When an unknown printer took a
-                                Type and scrambled it to make.</p>
+                            <h4>Development & Testing</h4>
+                            <p>Development as planned and complete testing of the developed product</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-12 text-center">
@@ -110,8 +107,8 @@
                                 <i class="fas fa-star"></i>
                             </div>
                             <h4>Delivery & Feedback</h4>
-                            <p>When an unknown printer took a
-                                Type and scrambled it to make.</p>
+                            <p>Deliver the project and receive feedback from clients. Make changes or further correct if
+                                there is any request from clients</p>
                         </div>
                     </div>
                 </div>

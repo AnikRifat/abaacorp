@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Image;
 
 class BlogController extends Controller
 {
@@ -48,7 +49,8 @@ class BlogController extends Controller
         if ($image = $request->file('image')) {
             $filePath = 'images/';
             $setImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($filePath, $setImage);
+            $img = Image::make($image)->resize(200, 370);
+            $img->save($filePath . "/" . $setImage, 80, "jpg");
             $input['image'] = $setImage;
         }
 
@@ -98,7 +100,8 @@ class BlogController extends Controller
         if ($image = $request->file('image')) {
             $filePath = 'images/';
             $setImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($filePath, $setImage);
+            $img = Image::make($image)->resize(200, 370);
+            $img->save($filePath . "/" . $setImage, 80, "jpg");
             $input['image'] = $setImage;
         } else {
             unset($input['image']);
