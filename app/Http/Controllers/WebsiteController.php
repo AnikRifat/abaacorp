@@ -84,6 +84,13 @@ class WebsiteController extends Controller
             'twitter' => 'required',
             'linkedin' => 'required',
             'youtube' => 'required',
+            'section_1' => 'required',
+            'section_2' => 'required',
+            'section_3' => 'required',
+            'section_4' => 'required',
+            'section_5' => 'required',
+            'section_6' => 'required',
+            'section_7' => 'required',
         ]);
 
         $input = $request->all();

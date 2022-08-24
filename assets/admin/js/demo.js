@@ -12,6 +12,7 @@
   $('#summernote').summernote();
   $('#summernote2').summernote();
   $('#summernote3').summernote();
+  $('#summernote4').summernote();
   
 
 

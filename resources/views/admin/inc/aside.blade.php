@@ -86,6 +86,15 @@
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ url('admin/method/method') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tree"></i>
+                        <p>
+                            Method Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tree"></i>
                         <p>

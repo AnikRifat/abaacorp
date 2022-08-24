@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Website;
-use App\Models\Blog;
 use App\Models\Method;
-use App\Models\Services;
 use Illuminate\Http\Request;
 
-class PublicController extends Controller
+class MethodController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,27 +14,10 @@ class PublicController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::latest()->paginate(4);
-        $services = Services::all();
-        $methods = Method::all();
+        $method = Method::all();
+        return view('admin.pages.methods.index', compact('method'));
+    }
 
-        return view('front.pages.home', [
-            'blogs' => $blogs,
-            'services' => $services,
-            'methods' => $methods,
-            'content' => $this->content
-        ]);
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function blogIndex()
-    {
-        $blogs = Blog::all();
-        return view('front.pages.blogs', compact('blogs'));
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -69,37 +49,43 @@ class PublicController extends Controller
     {
         //
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Blog  $blog
-     * @return \Illuminate\Http\Response
-     */
-    public function viewBlogs(Blog $blog)
-    {
-        return view('front.pages.view_blogs', compact('blog'));
-    }
+
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
+     * @param  \App\Models\Method  $method
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Method $method)
+
     {
-        //
+        // $data = Method::all();
+
+        // dd($method);
+
+        return view('admin.pages.methods.edit_method', compact('method'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Method  $method
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Method $method)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'color' => 'required',
+            'icon' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        $method->update($input);
+
+        return redirect()->route('method')->with('success', 'Portfolio uploaded Scueesfully.');
     }
 
     /**

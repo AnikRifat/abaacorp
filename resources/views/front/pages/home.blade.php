@@ -1,5 +1,31 @@
 @extends('front.master.master')
 @section('content')
+    @foreach ($methods as $method)
+        <style>
+            .single-progress-work.progress{{ $method->id }}:hover .icon {
+                background-color: {{ $method->color }};
+                color: #FFF;
+            }
+
+            .single-progress-work.progress{{ $method->id }} .icon {
+                z-index: 33;
+                width: 130px;
+                height: 130px;
+                color: {{ $method->color }};
+                margin: 0 auto;
+                font-size: 60px;
+                overflow: hidden;
+                position: relative;
+                line-height: 130px;
+                border-radius: 50%;
+                margin-bottom: 30px;
+                background-color: #FFF;
+                transition: 0.35s;
+                box-shadow: 0px 10px 30px 0px rgba(20, 27, 201, 0.1);
+            }
+        </style>
+    @endforeach
+
     <div class="main-body">
 
 
@@ -32,7 +58,7 @@
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-12 text-center">
                         <div class="section-title two">
-                            <h1>Our Services</h1>
+                            <h1>{{ $content->section_1 }}</h1>
                         </div>
                     </div>
                 </div>
@@ -60,54 +86,28 @@
                 <div class="row">
                     <div class="col-xl-12 text-center col-12">
                         <div class="section-title two">
-                            <h1>How Does It Work</h1>
+                            <h1>{{ $content->section_2 }}</h1>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-3 col-sm-6 col-12 text-center">
-                        <div class="single-progress-work progress1">
-                            <div class="icon">
-                                <i class="fas fa-comments"></i>
+                    @foreach ($methods as $method)
+                        <div class="col-xl-3 col-sm-6 col-12 text-center">
+                            <div class="single-progress-work progress{{ $method->id }}">
+                                <div class="icon">
+                                    <i class="{{ $method->icon }}"></i>
+                                </div>
+                                <h4>{{ $method->title }}</h4>
+                                <p>{!! $method->description !!}</p>
                             </div>
-                            <h4>Free Consultation</h4>
-                            <p>We sit down to fins scope of the project, identify key areas and make suggestions</p>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 text-center">
-                        <div class="single-progress-work progress2">
-                            <div class="icon">
-                                <i class="fas fa-clipboard-list"></i>
-                            </div>
-                            <h4>Plan & Budget</h4>
-                            <p>Concrete Features planning or System Analysis & Design with timeframe and budget</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 text-center">
-                        <div class="single-progress-work progress3">
-                            <div class="icon">
-                                <i class="fas fa-cubes"></i>
-                            </div>
-                            <h4>Development & Testing</h4>
-                            <p>Development as planned and complete testing of the developed product</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 text-center">
-                        <div class="single-progress-work progress4">
-                            <div class="icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4>Delivery & Feedback</h4>
-                            <p>Deliver the project and receive feedback from clients. Make changes or further correct if
-                                there is any request from clients</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
         <section class="agency-featured-wrap section-padding pt-0" id="feature">
             <div class="section-title two text-center">
-                <h1>About Us</h1>
+                <h1>{{ $content->section_3 }}</h1>
             </div>
             <div class="container">
                 <div class="row">
@@ -131,7 +131,7 @@
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-12 text-center">
                         <div class="section-title two">
-                            <h1>We Completed 1500+ Projects Successfully & Counting</h1>
+                            <h1>{{ $content->section_4 }}</h1>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                 <div class="row align-items-center text-center text-lg-left">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="section-title two text-center">
-                            <h1>Check Some of Our Recent Work</h1>
+                            <h1>{{ $content->section_5 }}</h1>
                         </div>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
         <section class="blog-page-wrap section-padding">
             <div class="container">
                 <div class="section-title two text-center">
-                    <h1>Read Our Blogs</h1>
+                    <h1>{{ $content->section_6 }}</h1>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 col-12">

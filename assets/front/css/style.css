@@ -3215,27 +3215,6 @@ header.sticky .mean-container .mean-bar {
   }
 }
 
-.single-progress-work:hover .icon {
-  background-color: #ff3a6c;
-  color: #FFF;
-}
-
-.single-progress-work .icon {
-  z-index: 33;
-  width: 130px;
-  height: 130px;
-  color: #ff3a6c;
-  margin: 0 auto;
-  font-size: 60px;
-  overflow: hidden;
-  position: relative;
-  line-height: 130px;
-  border-radius: 50%;
-  margin-bottom: 30px;
-  background-color: #FFF;
-  transition: 0.35s;
-  box-shadow: 0px 10px 30px 0px rgba(20, 27, 201, 0.1);
-}
 
 .single-progress-work h4 {
   margin-bottom: 13px;

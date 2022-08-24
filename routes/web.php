@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MethodController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BlogController;
@@ -24,7 +25,7 @@ Route::get('/', 'PublicController@index')->name('index');
 Route::get('/blogs', 'PublicController@blogIndex')->name('blogs');
 Route::get('/view_blogs/{blog}', 'PublicController@viewBlogs')->name('Blog Details');
 
-
+//protfolio-route
 Route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
 Route::get('/portfolio.add', 'PortfolioController@create')->name('portfolio.add');
 Route::post('/portfolio.store', 'PortfolioController@store')->name('portfolio.store');
@@ -34,7 +35,7 @@ Route::delete('/portfolio.destroy/{portfolio}', 'PortfolioController@destroy')->
 
 
 //blogs-route
-Route::prefix('admin/blogs')->middleware('auth')->group(function () {
+Route::prefix('admin/blogs')->middleware('auth', 'isAdmin')->group(function () {
     Route::get('/view_blogs', 'BlogController@index')->name('blogindex');
     Route::get('/create', 'BlogController@create')->name('blogcreate');
     Route::post('/store', 'BlogController@store')->name('blogstore');
@@ -43,7 +44,7 @@ Route::prefix('admin/blogs')->middleware('auth')->group(function () {
     Route::delete('/destroy/{blog}', 'BlogController@destroy')->name('blogdestroy');
 });
 //service-route
-Route::prefix('admin/services')->middleware('auth')->group(function () {
+Route::prefix('admin/services')->middleware('auth', 'isAdmin')->group(function () {
     Route::get('/view_services', 'ServicesController@index')->name('serviceindex');
     Route::get('/create', 'ServicesController@create')->name('servicecreate');
     Route::post('/store', 'ServicesController@store')->name('servicestore');
@@ -51,8 +52,15 @@ Route::prefix('admin/services')->middleware('auth')->group(function () {
     Route::put('/update/{service}', 'ServicesController@update')->name('serviceupdate');
     Route::delete('/destroy/{service}', 'ServicesController@destroy')->name('servicedestroy');
 });
+//method-route
+Route::prefix('admin/method')->middleware('auth', 'isAdmin')->group(function () {
+    Route::get('/method', 'MethodController@index')->name('method');
+    Route::get('method.edit/{method}', 'MethodController@edit')->name('method.edit');
+    Route::put('method.update/{method}', 'MethodController@update')->name('method.update');
+    Route::delete('method.destroy/{service}', 'MethodController@destroy')->name('method.destroy');
+});
 //content-route
-Route::prefix('admin/settings')->middleware('auth')->group(function () {
+Route::prefix('admin/settings')->middleware('auth', 'isAdmin')->group(function () {
     Route::get('/content', 'WebsiteController@index')->name('contentIndex');
     Route::put('/update/{content}', 'WebsiteController@update')->name('update');
 });

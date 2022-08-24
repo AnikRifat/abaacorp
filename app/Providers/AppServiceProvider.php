@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Method;
 use App\Models\Portfolio;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -31,5 +32,8 @@ class AppServiceProvider extends ServiceProvider
 
         $portfolio = Portfolio::all();
         View::share('portfolio', $portfolio);
+
+        // $methods = Method::all();
+        // View::share('methods', $methods);
     }
 }
