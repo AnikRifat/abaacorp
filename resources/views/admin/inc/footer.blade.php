@@ -55,8 +55,6 @@
 <script src="{{ asset('/') }}assets/admin/js/pages/dashboard.js"></script>
 <script src="{{ asset('/') }}js/app.js"></script>
 <script>
-
-
     $(function() {
         bsCustomFileInput.init();
 
@@ -73,7 +71,7 @@
             title: '{{ $massage }}'
         });
     @endif
-
+    
     Toast();
 </script>
 </body>

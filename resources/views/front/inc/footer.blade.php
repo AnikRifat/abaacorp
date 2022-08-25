@@ -1,5 +1,5 @@
 </div>
-<footer class="footer-agency" data-bg='{{ asset('/') }}assets/front/img/footer-bg-agency.png'>
+<footer class="footer-agency">
     <div class="animate-element">
         <img src="{{ asset('/') }}assets/front/img/footer/bline.svg" alt="" class="shape f1">
         <img src="{{ asset('/') }}assets/front/img/footer/gline.svg" alt="" class="shape f2">
@@ -11,7 +11,7 @@
         <img src="{{ asset('/') }}assets/front/img/footer/ring.png" alt="" class="shape f8">
     </div>
     <div class="call-to-action-wrap">
-        <div class="container bg-cover" data-bg='{{ asset('/') }}assets/front/img/dot-circle.png'>
+        <div class="container bg-cover" data-bg='{{ asset(' /') }}assets/front/img/dot-circle.png'>
             <div class="row align-items-center text-center text-lg-left">
                 <div class="col-xl-6 offset-xl-1 col-lg-7 offset-lg-1 col-12">
                     <div class="call-to-action-content">

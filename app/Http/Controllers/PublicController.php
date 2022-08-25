@@ -17,7 +17,7 @@ class PublicController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::latest()->paginate(4);
+        $blogs = Blog::paginate(1);
         $services = Services::all();
         $methods = Method::all();
 

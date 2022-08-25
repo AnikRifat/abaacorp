@@ -53,7 +53,59 @@
                         </div>
                         <!-- /.card-body -->
                     </div>
+                    <div class="card card-muted collapsed-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Colors </h3>
 
+                            <div class="card-tools">
+
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class="card-body" style="display: none;">
+                            <div class="form-group">
+                                <label for="primary_color">Primary color </label>
+                                <input type="color" name="primary_color" class="form-control"
+                                  value="{{ $content->primary_color }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="header_color">Header color </label>
+                                <input type="color" name="header_color" class="form-control"
+                                  value="{{ $content->header_color }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="header_text_color">Header Text color </label>
+                                <input type="color" name="header_text_color" class="form-control"
+                                  value="{{ $content->header_text_color }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="header_link_hover_color">Header Link Hover color </label>
+                                <input type="color" name="header_link_hover_color" class="form-control"
+                                  value="{{ $content->header_link_hover_color }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="footer_color">Footer color</label>
+                                <input type="color" name="footer_color" class="form-control"
+                                  value="{{ $content->footer_color }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="footer_text_color">footer text color </label>
+                                <input type="color" name="footer_text_color" class="form-control"
+                                  value="{{ $content->footer_text_color }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="footer_link_hover_color">footer Link Hover color </label>
+                                <input type="color" name="footer_link_hover_color" class="form-control"
+                                  value="{{ $content->footer_link_hover_color }}">
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
 
 
                     <div class="card card-muted collapsed-card">

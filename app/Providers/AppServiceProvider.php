@@ -7,6 +7,7 @@ use App\Models\Portfolio;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Website;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
         $portfolio = Portfolio::all();
         View::share('portfolio', $portfolio);
 
+        Paginator::useBootstrap();
         // $methods = Method::all();
         // View::share('methods', $methods);
     }

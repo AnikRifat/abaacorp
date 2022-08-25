@@ -69,6 +69,7 @@ class WebsiteController extends Controller
      */
     public function update(Request $request, Website $content)
     {
+        // // dd($request);
         $request->validate([
             'name' => 'required',
             'slogan' => 'required',
@@ -90,11 +91,20 @@ class WebsiteController extends Controller
             'section_4' => 'required',
             'section_5' => 'required',
             'section_6' => 'required',
-            'section_7' => 'required',
+            // 'section_7' => 'required',
+            'header_color' => 'required',
+            'header_text_color' => 'required',
+            'footer_color' => 'required',
+            'footer_text_color' => 'required',
+            'footer_link_hover_color' => 'required',
+            'header_link_hover_color' => 'required',
+            'primary_color' => 'required',
+
+
         ]);
 
         $input = $request->all();
-        // dd($input);
+
         if ($image = $request->file('logo')) {
             $filePath = 'images/';
             $setImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -128,7 +138,6 @@ class WebsiteController extends Controller
             unset($input['about_image']);
         }
         $content->update($input);
-        // dd($content->update($input));
 
         return redirect()->route('contentIndex')->with('success', 'Settings updated Successfully.');
     }
