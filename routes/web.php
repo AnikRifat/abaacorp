@@ -67,5 +67,5 @@ Route::prefix('admin/settings')->middleware('auth', 'isAdmin')->group(function (
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
 // Route::get('/logout', [App\Http\Controllers\HomeController::class, 'home'])->name('index');
