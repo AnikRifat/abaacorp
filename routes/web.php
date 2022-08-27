@@ -23,16 +23,34 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PublicController@index')->name('index');
 Route::get('/blogs', 'PublicController@blogIndex')->name('blogs');
+Route::get('/terms', 'PublicController@termsIndex')->name('terms');
+Route::get('/policy', 'PublicController@policyIndex')->name('policy');
 Route::get('/view_blogs/{blog}', 'PublicController@viewBlogs')->name('Blog Details');
 
-//protfolio-route
-Route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
-Route::get('/portfolio.add', 'PortfolioController@create')->name('portfolio.add');
-Route::post('/portfolio.store', 'PortfolioController@store')->name('portfolio.store');
-Route::get('/portfolio.edit/{portfolio}', 'PortfolioController@edit')->name('portfolio.edit');
-Route::put('/portfolio.update/{portfolio}', 'PortfolioController@update')->name('portfolio.update');
-Route::delete('/portfolio.destroy/{portfolio}', 'PortfolioController@destroy')->name('portfolio.destroy');
 
+//faq-route
+Route::get('/faq', 'PublicController@faqIndex')->name('faq');
+
+Route::middleware('auth', 'isAdmin')->group(function () {
+    Route::get('faq.index', 'FaqController@index')->name('faq.index');
+    Route::get('/faq.add', 'faqController@create')->name('faq.add');
+    Route::post('/faq.store', 'faqController@store')->name('faq.store');
+    Route::get('/faq.edit/{faq}', 'faqController@edit')->name('faq.edit');
+    Route::put('/faq.update/{faq}', 'faqController@update')->name('faq.update');
+    Route::delete('/faq.destroy/{faq}', 'faqController@destroy')->name('faq.destroy');
+});
+
+//protfolio-route
+
+
+Route::middleware('auth', 'isAdmin')->group(function () {
+    Route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
+    Route::get('/portfolio.add', 'PortfolioController@create')->name('portfolio.add');
+    Route::post('/portfolio.store', 'PortfolioController@store')->name('portfolio.store');
+    Route::get('/portfolio.edit/{portfolio}', 'PortfolioController@edit')->name('portfolio.edit');
+    Route::put('/portfolio.update/{portfolio}', 'PortfolioController@update')->name('portfolio.update');
+    Route::delete('/portfolio.destroy/{portfolio}', 'PortfolioController@destroy')->name('portfolio.destroy');
+});
 
 //blogs-route
 Route::prefix('admin/blogs')->middleware('auth', 'isAdmin')->group(function () {

@@ -40,5 +40,7 @@ class Website extends Model
         'primary_color',
         'footer_link_hover_color',
         'header_link_hover_color',
+        'policy',
+        'terms',
     ];
 }

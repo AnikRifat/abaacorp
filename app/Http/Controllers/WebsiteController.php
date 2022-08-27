@@ -99,6 +99,8 @@ class WebsiteController extends Controller
             'footer_link_hover_color' => 'required',
             'header_link_hover_color' => 'required',
             'primary_color' => 'required',
+            'policy' => 'required',
+            'terms' => 'required',
 
 
         ]);

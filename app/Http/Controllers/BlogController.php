@@ -16,7 +16,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::latest()->paginate(5);
+        $blogs = Blog::all();
         return view('admin.pages.blogs.index', compact('blogs'));
     }
 
@@ -56,7 +56,7 @@ class BlogController extends Controller
 
         Blog::create($input);
 
-        return redirect()->route('blogindex')->with('success', 'blog uploader Scueesfully.');
+        return redirect()->route('blogindex')->with('success', 'blog uploaded Scueesfully.');
     }
 
     /**

@@ -74,6 +74,29 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tree"></i>
+                        <p>
+                            FAQ Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('faq.add') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add FAQ</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('faq.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View FAQ</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -91,6 +114,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ url('admin/method/method') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>How Does it work</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ url('admin/settings/content') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Content</p>
@@ -98,15 +127,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ url('admin/method/method') }}" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
-                        <p>
-                            Method Management
-                            <i class="fas fa-angle-right right"></i>
-                        </p>
-                    </a>
-                </li>
+
                 <li class="nav-item">
 
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();

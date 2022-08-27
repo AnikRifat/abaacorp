@@ -287,7 +287,52 @@
                         </div>
                         <!-- /.card-body -->
                     </div>
+                    <div class="card card-muted collapsed-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Privacy & Policy </h3>
 
+                            <div class="card-tools">
+
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class="card-body" style="display: none;">
+                            <div class="form-group">
+                                <label for="policy">policy</label>
+                                <textarea id="summernote6" name="policy" class="form-control" rows="2">
+                                {{ $content->policy }}
+                                </textarea>
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <div class="card card-muted collapsed-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Terms & Conditions </h3>
+
+                            <div class="card-tools">
+
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class="card-body" style="display: none;">
+                            <div class="form-group">
+                                <label for="terms">terms</label>
+                                <textarea id="summernote7" name="terms" class="form-control" rows="2">
+                                {{ $content->terms }}
+                                </textarea>
+                            </div>
+                            
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
                     <button type="submit" class="btn btn-block btn-info btn-flat mb-4">Update</button>
                 </form>
             </div>

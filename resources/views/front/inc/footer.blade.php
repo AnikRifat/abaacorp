@@ -13,17 +13,13 @@
     <div class="call-to-action-wrap">
         <div class="container bg-cover" data-bg='{{ asset(' /') }}assets/front/img/dot-circle.png'>
             <div class="row align-items-center text-center text-lg-left">
-                <div class="col-xl-6 offset-xl-1 col-lg-7 offset-lg-1 col-12">
-                    <div class="call-to-action-content">
+                <div class="col-xl-12 col-12">
+                    <div class="text-center call-to-action-content">
                         <h3>So What is Next?</h3>
                         <h2>Are You Ready? Let’s Work!</h2>
                     </div>
                 </div>
-                <div class="col-xl-2 offset-xl-2 col-lg-3 offset-lg-1 col-md-12 col-12">
-                    <div class="action-btn mt-4 mt-lg-0">
-                        <a href="#" class="theme-btn">Get Start</a>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -42,15 +38,14 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-12 pl-60">
                     <div class="single-footer-wid">
                         <div class="widegts-title">
-                            <h4>Download</h4>
+                            <h4>Menu</h4>
                         </div>
                         <ul>
-                            <li><a href="#">Android App</a></li>
-                            <li><a href="#">ios App</a></li>
-                            <li><a href="#">Desktop</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Partners</a></li>
-                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Service</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Blogs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -60,12 +55,9 @@
                             <h4>Useful Links</h4>
                         </div>
                         <ul>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Term & conditions</a></li>
-                            <li><a href="#">Reporting</a></li>
-                            <li><a href="#">Tools & Integrations</a></li>
-                            <li><a href="#">API</a></li>
+                            <li><a href="{{ route('faq') }}">FAQ</a></li>
+                            <li><a href="{{ route('policy') }}">Privacy & Policy</a></li>
+                            <li><a href="{{ route('terms') }}">Terms & conditions</a></li>
                         </ul>
                     </div>
                 </div>

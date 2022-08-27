@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Faq;
 use App\Models\Method;
 use App\Models\Portfolio;
 use Illuminate\Support\Facades\View;
@@ -35,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('portfolio', $portfolio);
 
         Paginator::useBootstrap();
-        // $methods = Method::all();
-        // View::share('methods', $methods);
+        $faq = Faq::all();
+        View::share('faq', $faq);
     }
 }

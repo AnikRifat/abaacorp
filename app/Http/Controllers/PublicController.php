@@ -17,7 +17,7 @@ class PublicController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::paginate(1);
+        $blogs = Blog::paginate(4);
         $services = Services::all();
         $methods = Method::all();
 
@@ -37,6 +37,23 @@ class PublicController extends Controller
     {
         $blogs = Blog::all();
         return view('front.pages.blogs', compact('blogs'));
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function faqIndex()
+    {
+        return view('front.pages.faq');
+    }
+    public function termsIndex()
+    {
+        return view('front.pages.terms');
+    }
+    public function policyIndex()
+    {
+        return view('front.pages.policy');
     }
     /**
      * Show the form for creating a new resource.
