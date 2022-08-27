@@ -2,41 +2,16 @@
 @section('content')
 @foreach ($methods as $method)
 <style>
-    .single-progress-work.progress {
-            {
-            $method->id
-        }
-    }
-
-    :hover .icon {
-        background-color: {
-                {
-                $method->color
-            }
-        }
-
-        ;
+    .single-progress-work.progress<?php echo $method->id ?>:hover .icon {
+        background-color: <?php echo $method->color ?>;
         color: #FFF;
     }
 
-    .single-progress-work.progress {
-            {
-            $method->id
-        }
-    }
-
-    .icon {
+    .single-progress-work.progress<?php echo $method->id ?> .icon {
         z-index: 33;
         width: 130px;
         height: 130px;
-
-        color: {
-                {
-                $method->color
-            }
-        }
-
-        ;
+        color: <?php echo $method->color ?>;
         margin: 0 auto;
         font-size: 60px;
         overflow: hidden;

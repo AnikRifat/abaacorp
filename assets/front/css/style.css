@@ -3198,7 +3198,7 @@ header.sticky .mean-container .mean-bar {
 }
 
 .single-progress-work.progress2 .icon {
-  color: #00b894;
+  /* color: #00b894; */
 }
 
 @media (max-width: 1191px) {
@@ -3207,18 +3207,15 @@ header.sticky .mean-container .mean-bar {
   }
 }
 
-.single-progress-work.progress2:hover .icon {
-  color: #FFF;
-  background-color: #00b894;
-}
+
 
 .single-progress-work.progress3 .icon {
-  color: #6c5ce7;
+  /* color: #6c5ce7; */
 }
 
 .single-progress-work.progress3:hover .icon {
-  color: #FFF;
-  background-color: #6c5ce7;
+  /* color: #FFF; */
+  /* background-color: #6c5ce7; */
 }
 
 .single-progress-work.progress4 {
@@ -3226,7 +3223,7 @@ header.sticky .mean-container .mean-bar {
 }
 
 .single-progress-work.progress4 .icon {
-  color: #fdcb6e;
+  /* color: #fdcb6e; */
 }
 
 @media (max-width: 1191px) {
@@ -3236,8 +3233,8 @@ header.sticky .mean-container .mean-bar {
 }
 
 .single-progress-work.progress4:hover .icon {
-  color: #FFF;
-  background-color: #fdcb6e;
+  /* color: #FFF; */
+  /* background-color: #fdcb6e; */
 }
 
 .dew-line {
